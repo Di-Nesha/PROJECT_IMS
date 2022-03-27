@@ -5,14 +5,27 @@ from django.db import models
 class Gender(models.Model):
         name = models.CharField(max_length=15)
 
+        def __str__(self):
+                return self.name
+
 class CiviStatus(models.Model):
         name = models.CharField(max_length=15)
+
+        def __str__(self):
+                return self.name
 
 class Status(models.Model):
         name = models.CharField(max_length=15)
 
+        def __str__(self):
+                return self.name
+
 class Designation(models.Model):
         name = models.CharField(max_length=15)
+
+        def __str__(self):
+                return self.name
+
         
 class Main(models.Model):
         number = models.IntegerField()
