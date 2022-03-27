@@ -1,3 +1,4 @@
+from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
@@ -24,7 +25,7 @@ class Main(models.Model):
         land = models.IntegerField()
         notes = models.TextField
         regdate = models.DateField(auto_now=True)
-        gender_id = models.CharField(max_length=15)
-        civilstatus_id = models.CharField(max_length=15)
-        employeestatus_id = models.CharField(max_length=15)
-        designation_id = models.CharField(max_length=15)
+        gender_id = models.ForeignKey(Gender,on_delete=models.CASCADE)
+        civilstatus_id = models.ForeignKey(CiviStatus,on_delete=models.CASCADE)
+        employeestatus_id = models.ForeignKey(Status,on_delete=models.CASCADE)
+        designation_id = models.ForeignKey(Designation,on_delete=models.CASCADE)
