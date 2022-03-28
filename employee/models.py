@@ -28,15 +28,15 @@ class Designation(models.Model):
 
         
 class Main(models.Model):
-        number = models.IntegerField()
+        number = models.CharField(max_length=10)
         fullname = models.CharField(max_length=200)
         callingname = models.CharField(max_length=75)
-        photo = models.ImageField('jpeg','png')
+        photo = models.ImageField()
         nic = models.IntegerField()
-        address = models.TextField
+        address = models.TextField()
         mobile = models.IntegerField()
         land = models.IntegerField()
-        notes = models.TextField
+        notes = models.TextField()
         regdate = models.DateField(auto_now=True)
         gender_id = models.ForeignKey(Gender,on_delete=models.CASCADE)
         civilstatus_id = models.ForeignKey(CiviStatus,on_delete=models.CASCADE)
