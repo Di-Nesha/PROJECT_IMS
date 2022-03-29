@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'DASHBOARD.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'inventoryDB',
+        'NAME': 'inventorydb_rda',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
