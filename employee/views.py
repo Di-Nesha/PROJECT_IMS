@@ -1,5 +1,5 @@
-from email.headerregistry import HeaderRegistry
 from django.shortcuts import render
+from .forms import EmployeeForm
 
 #Create your views here.
 
@@ -8,7 +8,8 @@ def employee_list(request):
 
 # Insert & Update Function
 def employee_form(request):
-        return render(request,"employee/employee_form.html")
+        form = EmployeeForm()
+        return render(request,"employee/employee_form.html",{'form':form})
 
 #Delete Function
 def employee_delete(request):

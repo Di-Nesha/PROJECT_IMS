@@ -2,7 +2,7 @@ from django import forms
 from .models import New
 
 class EmployeeForm(forms.ModelForm):
-    
+
     class Meta:
         model = New
         fields = ('number','fullname','callingname','photo','nic','gender','civilstatus','designation','address','mobile','land','notes','employeestatus')
@@ -12,9 +12,9 @@ class EmployeeForm(forms.ModelForm):
             'callingname':'Calling Name',
             'photo':'Photo',
             'nic':'NIC',
-            'gender_id':'Gender',
-            'civilstatus_id':'Civil Status',
-            'designation_id':'Designation',
+            'gender':'Gender',
+            'civilstatus':'Civil Status',
+            'designation':'Designation',
             'address':'Permanant Address',
             'mobile':'Mobile Number',
             'land':'Land Number',
