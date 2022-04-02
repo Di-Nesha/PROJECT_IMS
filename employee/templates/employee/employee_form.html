@@ -4,7 +4,7 @@
 {% block content %}
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
-    {{form|crispy}}
+    {{form}}
 
 <button type="submit" class="btn btn-success btn-lg"> <i class="fa-solid fa-floppy-disk"></i> Add </button>
 <button type="button" class="btn btn-warning btn-lg"> <i class="fa-solid fa-marker"></i> Update </button>

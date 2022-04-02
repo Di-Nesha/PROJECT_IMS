@@ -2,7 +2,7 @@ from django import forms
 from .models import New
 
 class EmployeeForm(forms.ModelForm):
-
+    
     class Meta:
         model = New
         fields = ('number','fullname','callingname','photo','nic','gender','civilstatus','designation','address','mobile','land','notes','employeestatus')
@@ -25,10 +25,10 @@ class EmployeeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(EmployeeForm,self).__init__(*args, **kwargs)
-        self.fields['gender_id'].empty_label="Select Gender"
-        self.fields['civilstatus_id'].empty_label="Select Civil Status"
-        self.fields['employeestatus_id'].empty_label="Select Employee Status"
-        self.fields['designation_id'].empty_label="Select Designation"
+        self.fields['gender'].empty_label="Select Gender"
+        self.fields['civilstatus'].empty_label="Select Civil Status"
+        self.fields['employeestatus'].empty_label="Select Employee Status"
+        self.fields['designation'].empty_label="Select Designation"
         self.fields['photo'].required = False
         self.fields['notes'].required = False
 
