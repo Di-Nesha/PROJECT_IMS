@@ -7,7 +7,6 @@ class EmployeeForm(forms.ModelForm):
         model = New
         fields = ('number','fullname','callingname','photo','nic','gender','civilstatus','designation','address','mobile','land','notes','employeestatus')
         labels = {
-            'number':'Employee Number',
             'fullname':'Full Name',
             'callingname':'Calling Name',
             'photo':'Photo',
