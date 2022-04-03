@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
 from .forms import EmployeeForm
+from .models import New
 
 #Create your views here.
 def employee_list(request):
-        context = {'employee_list'=New.objects.all()}
+        context = {'employee_list':New.objects.all()}
         return render(request,"employee/employee_list.html",context)
 
 # Insert & Update Function
