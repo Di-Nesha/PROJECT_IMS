@@ -2,9 +2,9 @@ from django.shortcuts import render,redirect
 from .forms import EmployeeForm
 
 #Create your views here.
-
 def employee_list(request):
-        return render(request,"employee/employee_list.html")
+        context = {'employee_list'=New.objects.all()}
+        return render(request,"employee/employee_list.html",context)
 
 # Insert & Update Function
 def employee_form(request):

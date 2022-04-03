@@ -1,5 +1,27 @@
 {% extends "employee/base.html" %}
 
 {% block content %}
-<p> Table veiw </p>
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Emp Number</td>
+            <td> Calling Name </td>
+            <td> Designation </td>
+            <td> Mobile </td>
+            <td> Employee Status </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for new in employee_list %}
+        <tr>
+            <td> {{new.number}} </td>
+            <td> {{new.callingname}} </td>
+            <td> {{new.designation}} </td>
+            <td> {{new.mobile}} </td>
+            <td> {{new.employeestatus}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock content %}
