@@ -26,9 +26,8 @@
             <td> {{new.mobile}} </td>
             <td> {{new.employeestatus}} </td>
             <td>
-                <a href="{% url 'employee_update' new.id %}" class="btn text-secondary px 0">
-                    <i class="far fa-edit fa-lg">
-                    </i>
+                <a href="{% url 'employee_update' new.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
                 </a>
             </td>
         </tr>
