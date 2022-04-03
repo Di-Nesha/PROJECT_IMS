@@ -1,3 +1,4 @@
+from hashlib import new
 from django.shortcuts import render,redirect
 from .forms import EmployeeForm
 from .models import New
@@ -27,5 +28,7 @@ def employee_form(request, id=0):
                 return redirect('/employee/list')
 
 #Delete Function
-def employee_delete(request):
-        return
+def employee_delete(request,id):
+        employee = New.objects.get(pk=id)
+        employee.delete()
+        return redirect('/employee/list')
