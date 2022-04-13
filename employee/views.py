@@ -1,4 +1,3 @@
-from hashlib import new
 from django.shortcuts import render,redirect
 from .forms import EmployeeForm
 from .models import New
