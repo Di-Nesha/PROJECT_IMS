@@ -1,6 +1,4 @@
-from unicodedata import name
 from django.db import models
-from django import forms
 
 # Create your models here.
 class Status(models.Model):
@@ -28,7 +26,7 @@ class User(models.Model):
     email = models.EmailField(max_length=45)
     password = models.CharField(max_length=45)
     employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
-    role = models.ManyToManyField(Role,related_name="users")
+    role = models.ManyToManyField(Role)
     regdate = models.DateField(auto_now=True)
 
     class Meta:

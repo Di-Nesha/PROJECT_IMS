@@ -1,0 +1,43 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Emp Number</td>  
+            <td> Display Name </td>
+            <td> Email </td>
+            <td> User Name </td>
+            <td> Status </td>
+            <td>
+                <a href="{% url 'user_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> New </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for new in user_list %}
+        <tr>
+            <td> {{new.employee}} </td>
+            <td> {{new.displayname}} </td>
+            <td> {{new.email}} </td>
+            <td> {{new.username}} </td>
+            <td> {{new.staus}} </td>
+            <td>
+                <a href="{% url 'user_update' new.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'user_delete' new.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

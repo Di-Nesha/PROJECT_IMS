@@ -42,3 +42,6 @@ class New(models.Model):
         civilstatus = models.ForeignKey(CiviStatus,on_delete=models.CASCADE)
         employeestatus = models.ForeignKey(Status,on_delete=models.CASCADE)
         designation = models.ForeignKey(Designation,on_delete=models.CASCADE)
+
+        def __str__(self):
+                return self.number
