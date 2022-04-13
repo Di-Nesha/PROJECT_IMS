@@ -22,5 +22,3 @@ class UserForm(forms.ModelForm):
         self.fields['status'].empty_label="Select Status"
         self.fields['employee'].empty_label="Select Employee Number"
         self.fields['role'].empty_label="Select Role"
-
-

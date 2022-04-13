@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import UserForm
 from .models import User
 
+
 #Create your views here.
 def user_list(request):
         context = {'user_list':User.objects.all()}

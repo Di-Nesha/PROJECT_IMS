@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'employee',
     'user',
-    'crispy_forms'
+    'crispy_forms',
 
 ]
 
