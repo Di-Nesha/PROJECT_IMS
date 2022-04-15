@@ -1,0 +1,45 @@
+{% extends "privilege/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Role </td>
+            <td> Module </td>
+            <td> Select </td>
+            <td> Insert </td>
+            <td> Update </td>
+            <td> Delete </td>
+            <td>
+                <a href="{% url 'privilege_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> New </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for privilege in privilege_list %}
+        <tr>
+            <td> {{privilege.role}} </td>
+            <td> {{privilege.module}} </td>
+            <td> {{privilege.sel}} </td>
+            <td> {{privilege.ins}} </td>
+            <td> {{privilege.upd}} </td>
+            <td> {{privilege.delt}} </td>
+            <td>
+                <a href="{% url 'privilege_update' privilege.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'privilege_delete' privilege.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

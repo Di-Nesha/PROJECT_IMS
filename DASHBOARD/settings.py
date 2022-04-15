@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'user',
     'crispy_forms',
     'index',
+    'privilege',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'DASHBOARD.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'inventorydb_rda',
+        'NAME': 'rda_db',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
