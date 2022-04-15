@@ -22,6 +22,7 @@ urlpatterns = [
     path('user/',include('user.urls')),
     path('index/',include('index.urls')),
     path('privilege/',include('privilege.urls')),
+    path('supplier/',include('supplier.urls')),
 
 ]
  

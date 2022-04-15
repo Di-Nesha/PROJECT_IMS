@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djmoney',
     'employee',
     'user',
     'crispy_forms',
     'index',
     'privilege',
+    'supplier',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -57,6 +59,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'DASHBOARD.urls'
+
+CURRENCY_CHOICES = [('USD', '$'), ('LKR', 'Rs')]
 
 TEMPLATES = [
     {
