@@ -1,0 +1,43 @@
+{% extends "department/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Number</td>
+            <td> Department </td>
+            <td> Land </td>
+            <td> Email </td>
+            <td> Status </td>
+            <td>
+                <a href="{% url 'department_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> Department </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for department in department_list %}
+        <tr>
+            <td> {{department.number}} </td>
+            <td> {{department.name}} </td>
+            <td> {{department.land}} </td>
+            <td> {{department.email}} </td>
+            <td> {{department.status}} </td>
+            <td>
+                <a href="{% url 'department_update' department.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'department_delete' department.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

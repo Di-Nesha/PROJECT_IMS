@@ -23,6 +23,7 @@ urlpatterns = [
     path('index/',include('index.urls')),
     path('privilege/',include('privilege.urls')),
     path('supplier/',include('supplier.urls')),
+    path('department/',include('department.urls')),
 
 ]
  

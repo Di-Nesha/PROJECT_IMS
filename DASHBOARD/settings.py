@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'index',
     'privilege',
     'supplier',
+    'department',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
