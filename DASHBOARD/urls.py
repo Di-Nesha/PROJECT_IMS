@@ -24,6 +24,7 @@ urlpatterns = [
     path('privilege/',include('privilege.urls')),
     path('supplier/',include('supplier.urls')),
     path('department/',include('department.urls')),
+    path('departmentorder/',include('departmentorder.urls')),
 
 ]
  
