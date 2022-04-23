@@ -38,12 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djmoney',
-    'datetimewidget',
     'crispy_forms',
     
     'employee',
     'user',
-    'index',
     'privilege',
     'supplier',
     'department',
@@ -65,7 +63,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DASHBOARD.urls'
 
-CURRENCY_CHOICES = [('USD', '$'), ('LKR', 'Rs')]
+CURRENCY_CHOICES = [('LKR', 'Rs')]
 
 TEMPLATES = [
     {
@@ -92,7 +90,7 @@ WSGI_APPLICATION = 'DASHBOARD.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rda_db',
+        'NAME': 'inventorydb_v1',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
