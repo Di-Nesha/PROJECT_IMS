@@ -31,3 +31,4 @@ def department_delete(request,id):
         department = Department.objects.get(pk=id)
         department.delete()
         return redirect('/department/list')
+        

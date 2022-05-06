@@ -44,4 +44,4 @@ class New(models.Model):
         designation = models.ForeignKey(Designation,on_delete=models.CASCADE)
 
         def __str__(self):
-                return self.number
+                return self.callingname

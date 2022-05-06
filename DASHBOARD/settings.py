@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'privilege',
     'supplier',
     'department',
+    'issuingorder',
     'departmentorder',
 ]
 

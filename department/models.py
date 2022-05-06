@@ -7,7 +7,6 @@ class Status(models.Model):
         def __str__(self):
                 return self.name
 
-        
 class Department(models.Model):
         number = models.CharField(max_length=10)
         name = models.CharField(max_length=200)
@@ -21,4 +20,4 @@ class Department(models.Model):
         employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
 
         def __str__(self):
-                return self.number
+                return self.name
