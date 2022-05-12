@@ -27,7 +27,7 @@ class User(models.Model):
     email = models.EmailField(max_length=45)        
     password = models.CharField(max_length=45)
     employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
-    role = models.ManyToManyField(Role)
+    role = models.ForeignKey(Role,on_delete=models.CASCADE)
     regdate = models.DateField(auto_now=True)
 
     class Meta:
