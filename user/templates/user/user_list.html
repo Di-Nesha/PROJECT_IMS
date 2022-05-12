@@ -5,14 +5,14 @@
 <table class="table table borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <td> Emp Number</td>  
-            <td> Display Name </td>
+            <td> Display Name</td>
+            <td> User Name</td>
             <td> Email </td>
-            <td> User Name </td>
-            <td> Status </td>
+            <td> User Role </td>
+            <td> User Status </td>
             <td>
                 <a href="{% url 'user_insert' %}" class="btn btn-success">
-                    <i class="fas fa-plus"> New </i>
+                    <i class="fas fa-plus"> User </i>
                 </a>
             </td>
         </tr>
@@ -20,10 +20,10 @@
     <tbody>
         {% for user in user_list %}
         <tr>
-            <td> {{user.employee}} </td>
             <td> {{user.displayname}} </td>
-            <td> {{user.email}} </td>
             <td> {{user.username}} </td>
+            <td> {{user.email}} </td>
+            <td> {{user.role}} </td>
             <td> {{user.status}} </td>
             <td>
                 <a href="{% url 'user_update' user.id %}" class="btn btn-warning">

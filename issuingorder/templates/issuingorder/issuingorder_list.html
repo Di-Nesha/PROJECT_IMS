@@ -1,0 +1,44 @@
+{% extends "issuingorder/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Order Number </td>
+            <td> Dep. Order Number </td>
+            <td> Total Amount </td>
+            <td> Discount Amount </td>
+            <td> Net Amount </td>
+            <td> Status </td>
+            <td>
+                <a href="{% url 'issuingorder_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> Issuingorder </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for issuingorder in issuingorder_list %}
+        <tr>
+            <td> {{issuingorder.number}} </td>
+            <td> {{issuingorder.callingname}} </td>
+            <td> {{issuingorder.designation}} </td>
+            <td> {{issuingorder.mobile}} </td>
+            <td> {{issuingorder.issuingorderstatus}} </td>
+            <td>
+                <a href="{% url 'issuingorder_update' issuingorder.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'issuingorder_delete' issuingorder.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

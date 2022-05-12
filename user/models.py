@@ -15,10 +15,6 @@ class Role(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        ordering = ['name']
-
-
 
 class User(models.Model):
     status = models.ForeignKey(Status,on_delete=models.CASCADE)
@@ -29,7 +25,3 @@ class User(models.Model):
     employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
     role = models.ForeignKey(Role,on_delete=models.CASCADE)
     regdate = models.DateField(auto_now=True)
-
-    class Meta:
-        ordering = ['username']
-
