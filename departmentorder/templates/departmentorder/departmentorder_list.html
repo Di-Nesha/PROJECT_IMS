@@ -5,11 +5,10 @@
 <table class="table table borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <td> Emp Number</td>
-            <td> Calling Name </td>
-            <td> Designation </td>
-            <td> Mobile </td>
-            <td> Department Order Status </td>
+            <td> Dep. Order Number</td>
+            <td> Department </td>
+            <td> Total Amount </td>
+            <td> Status </td>
             <td>
                 <a href="{% url 'departmentorder_insert' %}" class="btn btn-success">
                     <i class="fas fa-plus"> New </i>
@@ -21,9 +20,8 @@
         {% for departmentorder in departmentorder_list %}
         <tr>
             <td> {{departmentorder.number}} </td>
-            <td> {{departmentorder.callingname}} </td>
-            <td> {{departmentorder.designation}} </td>
-            <td> {{departmentorder.mobile}} </td>
+            <td> {{departmentorder.department}} </td>
+            <td> {{departmentorder.totalamount}} </td>
             <td> {{departmentorder.status}} </td>
             <td>
                 <a href="{% url 'departmentorder_update' departmentorder.id %}" class="btn btn-warning">

@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'privilege',
     'supplier',
     'department',
-    'issuingorder',
-    'departmentorder',
+    'departmentorder'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -91,7 +90,7 @@ WSGI_APPLICATION = 'DASHBOARD.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'inventorydb_v1',
+        'NAME': 'inventorydb_v2',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',

@@ -9,6 +9,7 @@ def supplier_list(request):
 
 # Insert & Update Function
 def supplier_form(request, id=0):
+        
         if request.method == "GET":
                 if id==0:
                         form = SupplierForm()
