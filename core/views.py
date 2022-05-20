@@ -17,7 +17,6 @@ class Index(LoginRequiredMixin, View):
         news = New.objects.all()
         return render(request, self.template, {'news': news})
 
-
 class Login(View):
     template = 'login.html'
 
