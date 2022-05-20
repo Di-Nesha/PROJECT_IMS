@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +27,8 @@ urlpatterns = [
     path('departmentorder/',include('departmentorder.urls')),
     path('issuingorder/',include('issuingorder.urls')),
     path('quotationrequest/',include('quotationrequest.urls')),
-    path('main_window/',include('main_window.urls')),
+    path('', views.Index.as_view(), name='index'),
+    path('login/', views.Login.as_view(), name='login'),
 
 
 ]
