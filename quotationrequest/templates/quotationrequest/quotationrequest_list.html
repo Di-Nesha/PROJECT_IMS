@@ -1,0 +1,41 @@
+{% extends "quotationrequest/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Number</td>
+            <td> Due Date </td>
+            <td> Supplier </td>
+            <td> Status </td>
+            <td>
+                <a href="{% url 'quotationrequest_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> New </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for quotationrequest in quotationrequest_list %}
+        <tr>
+            <td> {{quotationrequest.number}} </td>
+            <td> {{quotationrequest.duedate}} </td>
+            <td> {{quotationrequest.supplier}} </td>
+            <td> {{quotationrequest.status}} </td>
+            <td>
+                <a href="{% url 'quotationrequest_update' quotationrequest.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'quotationrequest_delete' quotationrequest.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

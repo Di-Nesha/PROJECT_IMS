@@ -25,6 +25,7 @@ urlpatterns = [
     path('department/',include('department.urls')),
     path('departmentorder/',include('departmentorder.urls')),
     path('issuingorder/',include('issuingorder.urls')),
+    path('quotationrequest/',include('quotationrequest.urls')),
 
 ]
  
