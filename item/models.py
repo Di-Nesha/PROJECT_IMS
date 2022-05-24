@@ -55,5 +55,8 @@ class Item(models.Model):
         category = models.ForeignKey(Category,on_delete=models.CASCADE)
         employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
 
+        class Meta:
+                ordering = ['name']
+                
         def __str__(self):
                 return self.number

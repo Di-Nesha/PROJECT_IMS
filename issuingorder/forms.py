@@ -5,10 +5,11 @@ class IssuingOrderForm(forms.ModelForm):
 
     class Meta:
         model = IssuingOrder
-        fields = ('number','totalamount','discountratio','netamount','notes','status','employee','departmentorder')
+        fields = ('number','item','totalamount','discountratio','netamount','notes','status','employee','departmentorder')
         labels = {
 
             'number':'Order  Number',
+            'item':'Item',
             'totalamount':'Total Amount',
             'discountratio':'Discount Ratio',
             'netamount':'Net Amount',
@@ -16,10 +17,8 @@ class IssuingOrderForm(forms.ModelForm):
             'status':'Status',
             'employee':'Added By',
             'departmentorder':'Dep. Order No',
-
         }
 
-    
     def __init__(self, *args, **kwargs):
         super(IssuingOrderForm,self).__init__(*args, **kwargs)
         self.fields['status'].empty_label="Select Status"
