@@ -15,7 +15,6 @@ class Bank(models.Model):
 
         def __str__(self):
                 return self.name
-
         
 class Supplier(models.Model):
         number = models.CharField(max_length=10)
@@ -36,6 +35,7 @@ class Supplier(models.Model):
         bbranch = models.CharField(max_length=200)
         status = models.ForeignKey(Status,on_delete=models.CASCADE)
         employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
-
+        item = models.ManyToManyField('item.Item')
+        
         def __str__(self):
                 return self.number

@@ -5,7 +5,7 @@ class SupplierForm(forms.ModelForm):
 
     class Meta:
         model = Supplier
-        fields = ('number','name','mobile','land','email','cpname','address','cpnumber','creditlimit','tobepaid','remarks','bhname','bankname','baccountno','bbranch','status','employee')
+        fields = ('number','name','mobile','land','email','cpname','address','item','cpnumber','creditlimit','tobepaid','remarks','bhname','bankname','baccountno','bbranch','status','employee')
         labels = {
 
             'number':'Supplier Number',
@@ -15,6 +15,7 @@ class SupplierForm(forms.ModelForm):
             'email':'Email',
             'cpname':'Company Name',
             'address':'Company Address',
+            'item':'Items',
             'creditlimit':'Credit Limit',
             'tobepaid':'To Be Paid',
             'remarks':'Remarks',
