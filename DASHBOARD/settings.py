@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'departmentorder',
     'issuingorder',
     'quotationrequest',
+    'item',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

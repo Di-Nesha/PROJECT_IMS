@@ -27,6 +27,7 @@ urlpatterns = [
     path('departmentorder/',include('departmentorder.urls')),
     path('issuingorder/',include('issuingorder.urls')),
     path('quotationrequest/',include('quotationrequest.urls')),
+    path('item/',include('item.urls')),
     path('', views.Index.as_view(), name='index'),
     path('login/', views.Login.as_view(), name='login'),
 
