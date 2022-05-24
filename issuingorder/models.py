@@ -21,17 +21,19 @@ class IssuingOrder(models.Model):
         status = models.ForeignKey(Status,on_delete=models.CASCADE)
         employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
         departmentorder = models.ForeignKey('departmentorder.DepartmentOrder', db_column='departmentorder_id',on_delete=models.CASCADE)
-        item = models.ManyToManyField('item.Item', through='Enrollment')
+        item = models.ManyToManyField('item.Item', through='IssuingItem')
 
         def __str__(self):
                 return self.number
 
-class Enrollment(models.Model):
+#ManyToMany Table - with additional attributes -  (IssuingOrder - Item)
+class IssuingItem(models.Model):
         issuingorder = models.ForeignKey(IssuingOrder, on_delete=models.CASCADE)
         item = models.ForeignKey('item.Item', on_delete=models.CASCADE)
         qty = models.IntegerField()
         salesprice = MoneyField(decimal_places=2, max_digits=10)
         linetotal = MoneyField(decimal_places=2, max_digits=10)
 
+        #block - duplicate values
         class Meta:
                 unique_together = [['item' , 'issuingorder']]

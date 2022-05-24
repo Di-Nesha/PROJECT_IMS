@@ -5,19 +5,19 @@ class DepartmentOrderForm(forms.ModelForm):
 
     class Meta:
         model = DepartmentOrder
-        fields = ('number','department','totalamount','notes','status')
+        fields = ('number','department','item','totalamount','notes','status')
         labels = {
 
             'number':'Dep. Order Number',
             'department':'Department',
             'orderdate':'Order Date',
+            'item':'Items',
             'totalamount':'Total Amount',
             'notes':'Notes',
             'regdate':'Added Date',
             'status':'Status',
         }
 
-    
     def __init__(self, *args, **kwargs):
         super(DepartmentOrderForm,self).__init__(*args, **kwargs)
         self.fields['department'].empty_label="Select Department"

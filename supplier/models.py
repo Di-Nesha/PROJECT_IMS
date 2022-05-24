@@ -35,7 +35,8 @@ class Supplier(models.Model):
         bbranch = models.CharField(max_length=200)
         status = models.ForeignKey(Status,on_delete=models.CASCADE)
         employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
-        item = models.ManyToManyField('item.Item')
+        item = models.ManyToManyField('item.Item') #ManyToMany - without additional attributes -  Fiels (IssuingOrder - Item)
+
         
         def __str__(self):
                 return self.number
