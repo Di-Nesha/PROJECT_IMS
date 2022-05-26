@@ -1,0 +1,43 @@
+{% extends "inventory/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Available Qty</td>
+            <td> Notes </td>
+            <td> Register Date </td>
+            <td> Status </td>
+            <td> Added By </td>
+            <td>
+                <a href="{% url 'inventory_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> Inventory </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for inventory in inventory_list %}
+        <tr>
+            <td> {{inventory.availableqty}} </td>
+            <td> {{inventory.notes}} </td>
+            <td> {{inventory.regdate}} </td>
+            <td> {{inventory.status}} </td>
+            <td> {{inventory.employee}} </td>
+            <td>
+                <a href="{% url 'inventory_update' inventory.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'inventory_delete' inventory.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

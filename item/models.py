@@ -53,6 +53,7 @@ class Item(models.Model):
         brand = models.ForeignKey(Brand,on_delete=models.CASCADE)
         subcategory = models.ForeignKey(SubCategory,on_delete=models.CASCADE)
         category = models.ForeignKey(Category,on_delete=models.CASCADE)
+        inventory = models.ForeignKey('inventory.Inventory',on_delete=models.CASCADE)
         employee = models.ForeignKey('employee.New', db_column='employee_id',on_delete=models.CASCADE)
 
         class Meta:
