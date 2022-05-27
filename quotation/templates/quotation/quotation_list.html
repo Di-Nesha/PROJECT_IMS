@@ -1,0 +1,45 @@
+{% extends "quotation/base.html" %}
+
+{% block content %}
+
+<table class="table table borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td> Number </td>
+            <td> Quotation Request </td>
+            <td> Validate Form </td>
+            <td> Validate To </td>
+            <td> Status </td>
+            <td> Added By </td>
+            <td>
+                <a href="{% url 'quotation_insert' %}" class="btn btn-success">
+                    <i class="fas fa-plus"> New </i>
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for quotation in quotation_list %}
+        <tr>
+            <td> {{quotation.number}} </td>
+            <td> {{quotation.quotationrequest}} </td>
+            <td> {{quotation.validatefrom}} </td>
+            <td> {{quotation.validateto}} </td>
+            <td> {{quotation.status}} </td>
+            <td> {{quotation.employee}} </td>
+            <td>
+                <a href="{% url 'quotation_update' quotation.id %}" class="btn btn-warning">
+                    <i class="fa-solid fa-marker"> </i>
+                </a>
+                <form action="{% url 'quotation_delete' quotation.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="far fa-trash-alt float-right"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

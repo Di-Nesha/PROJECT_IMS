@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'quotationrequest',
     'item',
     'inventory',
+    'quotation',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
