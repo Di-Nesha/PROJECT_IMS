@@ -41,6 +41,7 @@
                 </li>
             </ul>
         </nav>
+        
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -52,7 +53,7 @@
 
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading"> Admin Panel </div>
-                            <a class="nav-link" href=" ">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -161,51 +162,79 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main style="background-image: url('/static/assets/img/bgimg2.jpg');">
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4 text-light">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active"> RDA - Inventory Management System </li>
+                            <li class="breadcrumb-item active text-light"> RDA - Inventory Management System </li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"> <div class="sb-nav-link-icon"><i class="fa fa-globe"></i> Official Web Site </div></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="https://www.rda.gov.lk/"> Visit Site </a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2" style="background-image: url('/static/assets/img/ovback2.jpg');">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                                                    New Notifications </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"> Count </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-bell fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body"> <div class="sb-nav-link-icon"><i class="fa fa-facebook"></i> Official Facebook Page </div></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="https://www.facebook.com/profile.php?id=100064662220259"> Visit Page </a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2" style="background-image: url('/static/assets/img/ovback2.jpg');">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                                                    Daily Tasks </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"> Count </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-history  fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body"><div class="sb-nav-link-icon"><i class="fa fa-info-circle"></i> Information Center </div></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2" style="background-image: url('/static/assets/img/ovback2.jpg');">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                                                    Bid Entries </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"> Count </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-list fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2" style="background-image: url('/static/assets/img/ovback2.jpg');">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                                                    Pending payment </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">Count</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-usd fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-4">
+                        <div class="card mb-4" style="background-image: url('/static/assets/img/bgimg3.jpg');" >
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Employee Details
@@ -251,6 +280,7 @@
                 </footer>
             </div>
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="/static/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
