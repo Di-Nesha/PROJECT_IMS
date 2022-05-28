@@ -28,7 +28,7 @@ class Designation(models.Model):
 
         
 class New(models.Model):
-        number = models.CharField(max_length=10)
+        number = models.CharField(max_length=10, unique = True, error_messages={"unique":"The Geeks Field you entered is not unique."})
         fullname = models.CharField(max_length=200)
         callingname = models.CharField(max_length=75)
         photo = models.ImageField()
@@ -37,7 +37,7 @@ class New(models.Model):
         mobile = models.CharField(max_length=10)
         land = models.CharField(max_length=10)
         notes = models.TextField()
-        regdate = models.DateField(auto_now=True)
+        regdate = models.DateField(auto_now_add=True)
         gender = models.ForeignKey(Gender,on_delete=models.CASCADE)
         civilstatus = models.ForeignKey(CiviStatus,on_delete=models.CASCADE)
         employeestatus = models.ForeignKey(Status,on_delete=models.CASCADE)

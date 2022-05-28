@@ -5,7 +5,6 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 from employee.models import New
-from user.models import User
 
 
 class Index(LoginRequiredMixin, View):
@@ -18,10 +17,6 @@ class Index(LoginRequiredMixin, View):
     def get(self, request):
         news = New.objects.all()
         return render(request, self.template, {'news': news})
-
-    def get(self, request):
-        users = User.objects.all()
-        return render(request, self.template, {'users': users})
 
 
 class Login(View):

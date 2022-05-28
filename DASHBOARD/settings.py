@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'djmoney',
     'crispy_forms',
+    'reportlab',
     
     'employee',
     'user',
