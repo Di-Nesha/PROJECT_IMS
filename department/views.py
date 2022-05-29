@@ -2,6 +2,41 @@ from django.shortcuts import render,redirect
 from .forms import DepartmentForm
 from .models import Department
 
+from django.http import FileResponse
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+
+#Create your PDF here.
+def department_pdf(request):
+        buf = io.BytesIO()
+        c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+        textob = c.beginText()
+        textob.setTextOrigin(inch,inch)
+        textob.setFont("Courier", 14)
+
+        departments = Department.objects.all()
+
+        lines = []
+
+        for department in departments:
+                lines.append(department.number)
+                lines.append(department.name)
+                lines.append(department.land)
+                lines.append(department.email)
+                lines.append("-------------------------------------------")
+
+        for line in lines:
+                textob.textLine(line)
+
+        c.drawText(textob)
+        c.showPage()
+        c.save()
+        buf.seek(0)
+
+        return FileResponse(buf, as_attachment=True, filename="Department.pdf")
+
 #Create your views here.
 def department_list(request):
         context = {'department_list':Department.objects.all()}

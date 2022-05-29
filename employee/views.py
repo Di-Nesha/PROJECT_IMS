@@ -9,8 +9,6 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 
-
-
 #Create your PDF here.
 def genarate_pdf(request):
         buf = io.BytesIO()
@@ -18,7 +16,6 @@ def genarate_pdf(request):
         textob = c.beginText()
         textob.setTextOrigin(inch,inch)
         textob.setFont("Courier", 14)
-
 
         employees = New.objects.all()
 
