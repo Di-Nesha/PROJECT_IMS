@@ -5,5 +5,7 @@ urlpatterns = [
     path('',views.departmentorder_form, name='departmentorder_insert'), # GET & POST request for INSERT operation
     path('<int:id>/',views.departmentorder_form, name='departmentorder_update'), # GET & POST request for UPDATE operation
     path('delete/<int:id>/',views.departmentorder_delete, name='departmentorder_delete'), # GET & POST request for DELETE operation
-    path('list/',views.departmentorder_list, name='departmentorder_list') # GET request to retrive and display all records
+    path('list/',views.departmentorder_list, name='departmentorder_list'), # GET request to retrive and display all records
+    path('depodr_pdf', views.depodr_pdf, name='depodr_pdf'),
+
 ]
