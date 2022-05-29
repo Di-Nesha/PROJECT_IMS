@@ -60,4 +60,4 @@ class Item(models.Model):
                 ordering = ['name']
                 
         def __str__(self):
-                return self.number
+                return self.name

@@ -7,11 +7,17 @@
     {{form|crispy}}
 
 <div class="row">
-    <div class="col-md-8">
-        <button type="submit" class="btn btn-success btn-block btn-lg"> 
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-primary btn-block btn-lg"> 
             <i class="fa-solid fa-floppy-disk"></i> Save
         </button>
     </div>
+    <div class="col-md-4">
+        <a href="{% url 'issuing_pdf' %}" target="_blank" class="btn btn-success btn-block btn-lg">            
+            <i class="fa fa-print"></i> Print
+        </a>
+    </div>
+
     <div class="col-md-4">
         <a href="{% url 'issuingorder_list' %}" class="btn btn-secondary btn-block btn-lg">
             <i class="fas fa-stream"></i> Back to List

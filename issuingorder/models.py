@@ -12,7 +12,7 @@ class Status(models.Model):
 
 class IssuingOrder(models.Model):
         number = models.CharField(max_length=10)
-        item = models.ManyToManyField(Item)
+        # item = models.ManyToManyField(Item)
         totalamount = MoneyField(decimal_places=2, max_digits=8)
         discountratio = MoneyField(decimal_places=2, max_digits=8)
         netamount = MoneyField(decimal_places=2, max_digits=8)
