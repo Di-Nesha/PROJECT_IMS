@@ -7,6 +7,22 @@ from django.views import View
 from employee.models import New
 
 
+class Password(LoginRequiredMixin, View):
+    template = 'password.html'
+    login_url = '/password/'
+ 
+    def get(self, request):
+        return render(request, self.template)
+
+
+class Register(LoginRequiredMixin, View):
+    template = 'register.html'
+    login_url = '/register/'
+ 
+    def get(self, request):
+        return render(request, self.template)
+
+
 class Index(LoginRequiredMixin, View):
     template = 'index.html'
     login_url = '/login/'
