@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'djmoney',
     'crispy_forms',
     'reportlab',
+    'chartjs',
     
     'employee',
     'user',
