@@ -19,7 +19,11 @@ class Register(View):
                 login(request, user)
                 messages.success(request, "Registration successful." )
                 return redirect("login")
-            messages.error(request, "Unsuccessful registration. Invalid information.")
+            else:
+                messages.error(request, "Unsuccessful registration. Invalid information.")
+        else:
+                messages.error(request, "Unsuccessful registration. Invalid information.")
+
         form = NewUserForm()
         return render (request=request, template_name="register", context={"form":form})
 
@@ -60,6 +64,7 @@ class Login(View):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            messages.success(request, "Login successful." )
             return HttpResponseRedirect('/')
         else:
             return render(request, self.template, {'form': form})
