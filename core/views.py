@@ -22,7 +22,6 @@ class Register(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, self.template)
 
-
 class Index(LoginRequiredMixin, View):
     template = 'index.html'
     login_url = '/login/'
@@ -33,7 +32,6 @@ class Index(LoginRequiredMixin, View):
     def get(self, request):
         news = New.objects.all()
         return render(request, self.template, {'news': news})
-
 
 class Login(View):
     template = 'login.html'
