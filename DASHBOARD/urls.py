@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from core import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('employee/',include('employee.urls')),
@@ -35,7 +36,5 @@ urlpatterns = [
     path('login/', views.Login.as_view(), name='login'),
     path('register/', views.Register.as_view(), name='register'),
     path('password/', views.Password.as_view(), name='password'),
-
-
 ]
  

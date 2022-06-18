@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'djmoney',
     'crispy_forms',
-    'reportlab',
     'chartjs',
     
     'employee',
@@ -56,6 +55,12 @@ INSTALLED_APPS = [
     'inventory',
     'quotation',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
